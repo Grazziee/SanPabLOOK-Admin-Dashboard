@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.cdnfonts.com/css/futura-std-4" rel="stylesheet">
+    <link href="https://fonts.cdnfonts.com/css/poppins" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.3.0/dist/chart.umd.min.js"></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp" rel="stylesheet">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="icon" type="image/x-icon"
+        href="https://raw.githubusercontent.com/Grazziee/SanPabLOOK-Admin-Dashboard/main/SanPabLookIcon.png">
+    <title>SanPabLOOK: Admin Dashboard</title>
+
+</head>
+
+<body>
+    <div class="container">
+        <!------------------------- START OF ASIDE ------------------------->
+        <aside>
+            <div class="top">
+                <div class="logo">
+                    <img src="https://raw.githubusercontent.com/Grazziee/SanPabLOOK-Admin-Dashboard/main/SanPabLookIcon.png"
+                        width="100px">
+                    <h2>SanPab<span class="primary">LOOK</span></h2>
+                </div>
+                <div class="close" id="close-btn">
+                    <span class="material-icons-sharp">close</span>
+                </div>
+            </div>
+
+            <div class="sidebar">
+                <a href="#" class="active">
+                    <span class="material-icons-sharp">grid_view</span>
+                    <h3>Dashboard</h3>
+                </a>
+                <a href="#">
+                    <span class="material-icons-sharp">insights</span>
+                    <h3>Analytics</h3>
+                </a>
+                <a href="#">
+                    <span class="material-icons-sharp">business</span>
+                    <h3>Establishments</h3>
+                </a>
+                <a href="#">
+                    <span class="material-icons-sharp">person</span>
+                    <h3>Tourists</h3>
+                </a>
+                <a href="#">
+                    <span class="material-icons-sharp">logout</span>
+                    <h3>Log out</h3>
+                </a>
+            </div>
+        </aside>
+        <!------------------------- END OF ASIDE ------------------------->
+        <main>
+            <h1>Dashboard</h1>
+
+            <div class="date">
+                <input type="date">
+            </div>
+
+            <div class="insights">
+                <div class="sales">
+                    <span class="material-icons-sharp">analytics</span>
+                    <div class="middle">
+                        <div class="left">
+                            <h3>Most Booked</h3>
+                            <h1>Casa San Pablo</h1>
+                        </div>
+                        <div class="progress">
+                            <div class="number">
+                                <p>35</p>
+                            </div>
+                        </div>
+                    </div>
+                    <small class="text-muted">Last 24 Hours</small>
+                </div>
+                <div class="sales">
+                    <span class="material-icons-sharp">analytics</span>
+                    <div class="middle">
+                        <div class="left">
+                            <h3>Most Reserved</h3>
+                            <h1>Sulyap Cafe</h1>
+                        </div>
+                        <div class="progress">
+                            <div class="number">
+                                <p>24</p>
+                            </div>
+                        </div>
+                    </div>
+                    <small class="text-muted">Last 24 Hours</small>
+                </div>
+                <div class="sales">
+                    <span class="material-icons-sharp">analytics</span>
+                    <div class="middle">
+                        <div class="left">
+                            <h3>Most Visited</h3>
+                            <h1>Sampalok Lake</h1>
+                        </div>
+                        <div class="progress">
+                            <div class="number">
+                                <p>87</p>
+                            </div>
+                        </div>
+                    </div>
+                    <small class="text-muted">Last 24 Hours</small>
+                </div>
+            </div>
+            <!----------------------- START OF RECENT BOOKINGS ----------------------->
+            <div class="recent-bookings">
+                <h2>Recent Bookings</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Hotel Name</th>
+                            <th>Hotel Number</th>
+                            <th>Payment</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- <tr>
+                            <td>Casa San Pablo</td>
+                            <td>00234</td>
+                            <td>Due</td>
+                            <td class="success">Confirmed</td>
+                            <td class="primary">Details</td>
+                        </tr>
+                        <tr>
+                            <td>Casa San Pablo</td>
+                            <td>00234</td>
+                            <td>Due</td>
+                            <td class="success">Confirmed</td>
+                            <td class="primary">Details</td>
+                        </tr>
+                        <tr>
+                            <td>Casa San Pablo</td>
+                            <td>00234</td>
+                            <td>Due</td>
+                            <td class="success">Confirmed</td>
+                            <td class="primary">Details</td>
+                        </tr>
+                        <tr>
+                            <td>Casa San Pablo</td>
+                            <td>00234</td>
+                            <td>Due</td>
+                            <td class="success">Confirmed</td>
+                            <td class="primary">Details</td>
+                        </tr>
+                        <tr>
+                            <td>Casa San Pablo</td>
+                            <td>00234</td>
+                            <td>Due</td>
+                            <td class="success">Confirmed</td>
+                            <td class="primary">Details</td>
+                        </tr> -->
+                    </tbody>
+                </table>
+                <a href="#">Show All</a>
+            </div>
+        </main>
+        <!----------------------- END OF RECENT BOOKINGS ----------------------->
+
+        <div class="right">
+            <div class="top">
+                <button id="menu-btn">
+                    <span class="material-icons-sharp">menu</span>
+                </button>
+                <div class="profile">
+                    <div class="info">
+                        <p>Tara, <b>Joy</b></p>
+                        <small class="text-muted">Admin</small>
+                    </div>
+                    <div class="profile-photo">
+                        <img src="https://raw.githubusercontent.com/Grazziee/SanPabLOOK-Admin-Dashboard/main/SanPabLookIcon.png"
+                            width="50px">
+                    </div>
+                </div>
+            </div>
+            <!--------------------------- END OF TOP ----------------------->
+            <div class="recent-updates">
+                <h2>Recent Updates</h2>
+                <div class="updates">
+                    <div class="update">
+                        <div class="profile-photo">
+                            <img
+                                src="https://raw.githubusercontent.com/Grazziee/SanPabLOOK-Admin-Dashboard/main/SanPabLookIcon.png">
+                        </div>
+                        <div class="message">
+                            <p><b>Karl Given</b> has booked a plan in Casa San Pablo.</p>
+                            <small class="text-muted">43 Minutes Ago</small>
+                        </div>
+                    </div>
+                    <div class="update">
+                        <div class="profile-photo">
+                            <img
+                                src="https://raw.githubusercontent.com/Grazziee/SanPabLOOK-Admin-Dashboard/main/SanPabLookIcon.png">
+                        </div>
+                        <div class="message">
+                            <p><b>Trisha May</b> has booked a plan in Casa San Pablo.</p>
+                            <small class="text-muted">43 Minutes Ago</small>
+                        </div>
+                    </div>
+                    <div class="update">
+                        <div class="profile-photo">
+                            <img
+                                src="https://raw.githubusercontent.com/Grazziee/SanPabLOOK-Admin-Dashboard/main/SanPabLookIcon.png">
+                        </div>
+                        <div class="message">
+                            <p><b>Aenjel Joy</b> has booked a plan in Casa San Pablo.</p>
+                            <small class="text-muted">43 Minutes Ago</small>
+                        </div>
+                    </div>
+                    <div class="update">
+                        <div class="profile-photo">
+                            <img
+                                src="https://raw.githubusercontent.com/Grazziee/SanPabLOOK-Admin-Dashboard/main/SanPabLookIcon.png">
+                        </div>
+                        <div class="message">
+                            <p><b>Leona Marie</b> has booked a plan in Casa San Pablo.</p>
+                            <small class="text-muted">43 Minutes Ago</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!----------------------- END OF RECENT UPDATES ----------------------->
+            <div class="tourism-analytics">
+                <h2>Tourism Analytics</h2>
+                <div class="tour bookings">
+                    <div class="icon">
+                        <span class="material-icons-sharp">menu_book</span>
+                    </div>
+                    <div class="right">
+                        <div class="info">
+                            <h3>BOOKINGS</h3>
+                            <small class="text-muted">Last 24 Hours</small>
+                        </div>
+                        <h5 class="success">+12%</h5>
+                        <h3>23</h3>
+                    </div>
+                </div>
+                <div class="tour reservations">
+                    <div class="icon">
+                        <span class="material-icons-sharp">flatware</span>
+                    </div>
+                    <div class="right">
+                        <div class="info">
+                            <h3>DINE</h3>
+                            <small class="text-muted">Last 24 Hours</small>
+                        </div>
+                        <h5 class="success">+19%</h5>
+                        <h3>41</h3>
+                    </div>
+                </div>
+                <div class="tour new-users">
+                    <div class="icon">
+                        <span class="material-icons-sharp">person</span>
+                    </div>
+                    <div class="right">
+                        <div class="info">
+                            <h3>NEW USERS</h3>
+                            <small class="text-muted">Last 24 Hours</small>
+                        </div>
+                        <h5 class="danger">-5%</h5>
+                        <h3>4</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="./bookings.js"></script>
+    <script src="./index.js"></script>
+</body>
+
+</html>
