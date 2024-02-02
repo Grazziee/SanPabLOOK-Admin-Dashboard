@@ -1,0 +1,42 @@
+const firebaseConfig = {
+    apiKey: "AIzaSyDeRZzGLD9Klav-eCIlHzmMn0nu0zNg4j4",
+    authDomain: "sanpablook-project.firebaseapp.com",
+    projectId: "sanpablook-project",
+    storageBucket: "sanpablook-project.appspot.com",
+    messagingSenderId: "121974656262",
+    appId: "1:121974656262:web:6dbf77f2ed680aa7b42287",
+    measurementId: "G-TR3TKQFRQ9"
+  };
+
+  firebase.initializeApp(firebaseConfig);
+
+  var db = firebase.firestore();
+  
+  let Bookings = [];
+  
+  db.collection("BookingPending")
+      .get()
+      .then((querySnapshot) => {
+          querySnapshot.forEach((doc) => {
+              const data = doc.data();
+              Bookings.push({
+                  hotelName: data.hotelName,
+                  hotelNumber: data.hotelNumber,
+                  paymentStatus: data.paymentStatus,
+                  status: data.status
+              });
+          });
+      })
+      .then(() => {
+          console.log(Bookings);
+  
+          // Get the element where you want to display the bookings
+          const bookingsElement = document.getElementById('bookings');
+  
+          // Create a list element for each booking and append it to the bookings element
+          Bookings.forEach(booking => {
+              const bookingElement = document.createElement('li');
+              bookingElement.textContent = `Hotel Name: ${booking.hotelName}, Hotel Number: ${booking.hotelNumber}, Payment Status: ${booking.paymentStatus}, Status: ${booking.status}`;
+              bookingsElement.appendChild(bookingElement);
+          });
+      });
