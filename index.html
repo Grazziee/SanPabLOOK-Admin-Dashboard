@@ -10,7 +10,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js@4.3.0/dist/chart.umd.min.js"></script>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp" rel="stylesheet">
-    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="style.css">
     <link rel="icon" type="image/x-icon"
         href="https://raw.githubusercontent.com/Grazziee/SanPabLOOK-Admin-Dashboard/main/SanPabLookIcon.png">
     <title>SanPabLOOK: Admin Dashboard</title>
@@ -57,11 +57,11 @@
                     <div class="middle">
                         <div class="left">
                             <h3>Most Booked</h3>
-                            <h1>Casa San Pablo</h1>
+                            <h1 id="mostBooked">Casa San Pablo</h1>
                         </div>
                         <div class="progress">
                             <div class="number">
-                                <p>35</p>
+                                <p id="mostBookedCount">35</p>
                             </div>
                         </div>
                     </div>
@@ -86,12 +86,12 @@
                     <span class="material-icons-sharp">analytics</span>
                     <div class="middle">
                         <div class="left">
-                            <h3>Most Visited</h3>
-                            <h1>Sampalok Lake</h1>
+                            <h3>Least Booked</h3>
+                            <h1 id="leastBookedName">Sampalok Lake</h1>
                         </div>
                         <div class="progress">
                             <div class="number">
-                                <p>87</p>
+                                <p id="leastBookedCount">87</p>
                             </div>
                         </div>
                     </div>
@@ -105,7 +105,7 @@
                     <thead>
                         <tr>
                             <th>Hotel Name</th>
-                            <th>Hotel Number</th>
+                            <th>Booking ID</th>
                             <th>Payment</th>
                             <th>Status</th>
                         </tr>
@@ -228,7 +228,7 @@
                             <small class="text-muted">Last 24 Hours</small>
                         </div>
                         <h5 class="success">+12%</h5>
-                        <h3>23</h3>
+                        <h3 id="testing">23</h3>
                     </div>
                 </div>
                 <div class="tour reservations">
@@ -261,8 +261,14 @@
         </div>
     </div>
 
-    <script src="./bookings.js"></script>
-    <script src="./index.js"></script>
+    <script src="bundle.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+    <script type ="module" src="./src/bookings.js"></script>
+    <script type ="module" src="./src/index.js"></script>
+    <script type = "module" src="./src/bookingCount.js"></script>
+    <script type = "module" src="./src/firebase.js"></script>
+      </script>
 </body>
 
 </html>
